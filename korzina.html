@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой магаз</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="jss/script.js"></script>
+    <script src="jss/jquery-3.6.0.min.js"></script>
+    <script src="jss/main.js"></script>
+</head>
+<body>
+    <header class="page-header">
+        <div class="container_log">
+            <h6 class="page-title">Мир<br>Шахмат</br></h6>
+        </div>
+        <div class="poisk"> <section>
+            <p class="container">Корзина</p>
+        </section>
+        <section class="mainhead">
+            <div class="container">
+                <a href="#" class="icon logo"></a>
+                <div class="searschform"></div>
+                <a href="#" class="icon login"></a>
+            </div>
+        </section>
+
+        <section class="mainhead">
+            <nav class="container">
+                <a href="index.html">Главная</a>
+                <a href="catalok.html" >Каталог</a>
+                <a href="tafar.html" >Товар</a>
+                <a href="korzina.html" >Корзина</a>
+                <a href="contakt.html" >Контакты</a>
+            </div>
+        </div>
+        </section>
+    </header>
+
+<!--Сердина-->
+    <main class="page-main">   
+        <h1></h1>
+        <script>
+            let tovardata = [
+                {
+                    id: 1,
+                    qty: 1,
+                    name: 'Шахматы из Гарри Поттера',
+                    price: 11190,
+                },
+                {
+                    id: 2,
+                    qty: 2,
+                    name: 'Ладья из дерева',
+                    price: 1500,
+                },
+            ];
+            if (localStorage.getItem('addTovar')) {
+                let tovar = JSON.parse(localStorage.getItem('addTovar'));
+                for (let i of tovar) {
+                    tovardata.push(i);
+                }
+                localStorage.removeItem('addTovar');
+            }
+        </script>
+
+<div class="table"></div>
+            
+            <div class="form">
+                <form action="https://jsonplaceholder.typicode.com/posts" method="POST" name="orderform">
+                    <fieldset>
+                        <legend>Данные получателя:</legend>
+                        
+                        <input type="text" name="name" id="name" placeholder="Имя">
+                        
+                        <input type="text" name="phone" id="phone" placeholder="Телефон">
+                        
+                        <input type="text" name="mail" id="mail" placeholder="Почта">
+                        
+                        <textarea name="comment" id="comment"></textarea>
+                    </fieldset>
+                    
+                    <fieldset>
+                        <legend>Дата доставки:</legend>
+                        
+                        <input type="text" name="date" id="date" placeholder="ДД-ММ-ГГГГ" autocomplete="off">
+                    </fieldset>
+                        
+                    <button type="submit" class="sendform">Заказать</button>
+                </form>
+            </div>
+        </div>
+    </main>
+<!--Подвал-->
+<footer class="page-footer">
+</a> <button class="up-button" type="button">
+ ↑
+</button>
+<script src="up-button.js"></script>
+ <div class="container-footer">
+   <p>© Sykkyb</p>
+   <img class="about-image" src="img/BjXMxYWIyW8.jpg" width="147" height="147">
+   <p>2022</p>
+ </div>
+</footer>
+</body>
+</html>
